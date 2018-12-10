@@ -1,0 +1,532 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/**
+ * Start Vanilla CSS 1.0.2 
+ */
+body {
+  font: 9pt/1.5em sans-serif;
+}
+
+pre, code, tt {
+  font: 1em/1.5em 'Andale Mono', 'Lucida Console', monospace;
+}
+
+h1, h2, h3, h4, h5, h6, b, strong {
+  font-weight: bold;
+}
+
+em, i, dfn {
+  font-style: italic;
+}
+
+dfn {
+  font-weight: bold;
+}
+
+p, code, pre, kbd {
+  margin: 0 0 1.5em 0;
+}
+
+blockquote {
+  margin: 0 1.5em 1.5em 1.5em;
+}
+
+cite {
+  font-style: italic;
+}
+
+li ul, li ol {
+  margin: 0 1.5em;
+}
+
+ul, ol {
+  margin: 0 1.5em 1.5em 1.5em;
+}
+
+ul {
+  list-style-type: disc;
+}
+
+ol {
+  list-style-type: decimal;
+}
+
+ol ol {
+  list-style: upper-alpha;
+}
+
+ol ol ol {
+  list-style: lower-roman;
+}
+
+ol ol ol ol {
+  list-style: lower-alpha;
+}
+
+dl {
+  margin: 0 0 1.5em 0;
+}
+
+dl dt {
+  font-weight: bold;
+}
+
+dd {
+  margin-left: 1.5em;
+}
+
+table {
+  margin-bottom: 1.4em;
+  width: 100%;
+}
+
+th {
+  font-weight: bold;
+}
+
+th, td, caption {
+  padding: 4px 10px 4px 5px;
+}
+
+tfoot {
+  font-style: italic;
+}
+
+sup, sub {
+  line-height: 0;
+}
+
+abbr, acronym {
+  border-bottom: 1px dotted;
+}
+
+address {
+  margin: 0 0 1.5em;
+  font-style: italic;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+pre {
+  margin: 1.5em 0;
+  white-space: pre;
+}
+
+img.centered, .aligncenter, div.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+img.alignright {
+  display: inline;
+}
+
+img.alignleft {
+  display: inline;
+}
+
+.alignright {
+  float: right;
+  margin-left: 10px;
+}
+
+.alignleft {
+  float: left;
+  margin-right: 10px;
+}
+
+img {
+  max-width: 100%;
+}
+
+* html .clearfix {
+  height: 1%;
+}
+
+* + html .clearfix {
+  display: inline-block;
+}
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+* html .group {
+  height: 1%;
+}
+
+* + html .group {
+  display: inline-block;
+}
+
+.group:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+/**
+* End Vanilla CSS
+*/
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  padding: 24px;
+  display: grid;
+  grid-template-columns: 1fr 9fr;
+  grid-template-areas: "logo navbar" "logo account" "flags flags" "content content" "footer footer";
+}
+.container .logo {
+  grid-area: logo;
+}
+.container .navbar {
+  grid-area: navbar;
+  border-bottom: 1px solid #5a2e2b;
+}
+.container .account {
+  grid-area: account;
+}
+.container .flags {
+  grid-area: flags;
+}
+.container .content {
+  grid-area: content;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto auto;
+  grid-template-areas: "stories stories" "content-left content-right";
+  border-width: 3px 1px 0 1px;
+  border-style: solid;
+  border-color: #5a2e2b rgba(0, 0, 0, 0.12) transparent rgba(0, 0, 0, 0.12);
+}
+.container .content .stories {
+  grid-area: stories;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+.container .content .stories .stories--top {
+  border-left: 1px solid rgba(0, 0, 0, 0.12);
+}
+.container .content .content--left {
+  grid-area: content-left;
+}
+.container .content .content--left > * {
+  display: block;
+}
+.container .content .content--left > *:not(:last-child) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+.container .content .content--right {
+  grid-area: content-right;
+  display: grid;
+  grid-template-rows: auto 72px 1fr;
+  border-left: 1px solid rgba(0, 0, 0, 0.12);
+}
+.container .content .content--right > *:not(:last-child) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+.container .content .content--right .standings, .container .content .content--right .gp {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.container .content .content--right .standings .standings--team {
+  border-left: 1px solid rgba(0, 0, 0, 0.12);
+}
+.container .content .content--right .gp--left > *:not(:last-child), .container .content .content--right .gp--right > *:not(:last-child) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+.container .content .content--right .gp--right {
+  border-left: 1px solid rgba(0, 0, 0, 0.12);
+}
+.container .footer {
+  grid-area: footer;
+  display: grid;
+  grid-template-rows: 8px auto;
+  grid-template-columns: 2fr 4fr 1fr 2fr;
+  grid-template-areas: "color-scheme color-scheme color-scheme color-scheme" "logo formula-1 series social";
+}
+.container .footer .color-scheme {
+  grid-area: color-scheme;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.container .footer .color-scheme .color-ascent {
+  background: #5a2e2b;
+}
+.container .footer .color-scheme .color-primary {
+  background: #ec652b;
+}
+.container .footer .color-scheme .color-secondary {
+  background: #f2b72b;
+}
+.container .footer .logo {
+  grid-area: logo;
+}
+.container .footer .formula-1 {
+  grid-area: formula-1;
+}
+.container .footer .series {
+  grid-area: series;
+  border-left: 1px solid rgba(0, 0, 0, 0.12);
+}
+.container .footer .social {
+  grid-area: social;
+  border-left: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.ad {
+  background: transparent;
+  color: rgba(0, 0, 0, 0.54);
+  padding: 8px;
+  position: relative;
+}
+.ad .title {
+  color: #5a2e2b;
+}
+.ad .text {
+  color: rgba(0, 0, 0, 0.54);
+}
+.ad .img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: #becdd4;
+  border: none;
+}
+.ad .title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  z-index: 1;
+  padding: 24px;
+}
+
+.ad--news-feature,
+.ad--column-feature {
+  height: 96px;
+}
+
+.ad--gp {
+  width: 100%;
+  padding-top: 100%;
+  height: 0;
+}
+.ad--gp .ad--container {
+  position: absolute;
+  background: #becdd4;
+  width: calc(100% - (8px*2));
+  height: calc(100% - (8px*2));
+  top: 8px;
+  left: 8px;
+  z-index: 0;
+}
+
+.column-feature {
+  background: transparent;
+  color: rgba(0, 0, 0, 0.54);
+  padding: 8px;
+}
+.column-feature .title {
+  color: #5a2e2b;
+}
+.column-feature .text {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.footer .formula-1, .footer .series, .footer .social {
+  background: transparent;
+  color: rgba(0, 0, 0, 0.54);
+  padding: 8px;
+}
+.footer .formula-1 .title, .footer .series .title, .footer .social .title {
+  color: #5a2e2b;
+}
+.footer .formula-1 .text, .footer .series .text, .footer .social .text {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.gp__calendar {
+  background: transparent;
+  color: rgba(0, 0, 0, 0.54);
+  padding: 8px;
+}
+.gp__calendar .title {
+  color: #5a2e2b;
+}
+.gp__calendar .text {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.gp__reports {
+  background: transparent;
+  color: rgba(0, 0, 0, 0.54);
+  padding: 8px;
+}
+.gp__reports .title {
+  color: #5a2e2b;
+}
+.gp__reports .text {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.news-opinions-analysis {
+  background: transparent;
+  color: rgba(0, 0, 0, 0.54);
+  padding: 8px;
+}
+.news-opinions-analysis .title {
+  color: #5a2e2b;
+}
+.news-opinions-analysis .text {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.photo-of-the-week {
+  background: transparent;
+  color: rgba(0, 0, 0, 0.54);
+  padding: 8px;
+}
+.photo-of-the-week .title {
+  color: #5a2e2b;
+}
+.photo-of-the-week .text {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.quote-of-the-day {
+  background: #63302c;
+  color: rgba(255, 255, 255, 0.54);
+  padding: 24px;
+}
+.quote-of-the-day .title {
+  color: rgba(255, 255, 255, 0.75);
+}
+.quote-of-the-day .text {
+  color: rgba(255, 255, 255, 0.54);
+}
+
+.standings--wc, .standings--team {
+  background: transparent;
+  color: rgba(0, 0, 0, 0.54);
+  padding: 8px;
+}
+.standings--wc .title, .standings--team .title {
+  color: #5a2e2b;
+}
+.standings--wc .text, .standings--team .text {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.stories--featured, .stories--top, .stories--other {
+  background: transparent;
+  color: rgba(0, 0, 0, 0.54);
+  padding: 8px;
+}
+.stories--featured .title, .stories--top .title, .stories--other .title {
+  color: #5a2e2b;
+}
+.stories--featured .text, .stories--top .text, .stories--other .text {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.twitter-feed {
+  background: #89c9f9;
+  color: rgba(255, 255, 255, 0.54);
+  padding: 24px;
+}
+.twitter-feed .title {
+  color: #5a2e2b;
+}
+.twitter-feed .text {
+  color: rgba(255, 255, 255, 0.54);
+}
+
+.video-gallery {
+  background: transparent;
+  color: rgba(0, 0, 0, 0.54);
+  padding: 8px;
+}
+.video-gallery .title {
+  color: #5a2e2b;
+}
+.video-gallery .text {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+/* No files to import found in trumps**\/** */

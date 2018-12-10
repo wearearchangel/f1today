@@ -1,0 +1,38 @@
+$colors: (
+    black: #000,
+    white: #fff,
+    primary: rgb(236, 101, 43),
+    secondary: rgb(242, 183, 43),
+    ascent: rgb(90, 46, 43),
+
+    ad: rgb(190, 205, 212),
+
+    background: #fafafa,
+
+    twitter: rgb(137, 201, 249),
+    quote-of-the-day: rgb(99, 48, 44)
+);
+
+$color-black: map-get($colors, black );
+$color-black-87: rgba(map-get($colors, black ), .87);
+$color-black-54: rgba(map-get($colors, black ), .54);
+$color-black-38: rgba(map-get($colors, black ), .38);
+$color-black-12: rgba(map-get($colors, black ), .12);
+
+$color-white: map-get($colors, white );
+$color-white-75: rgba(map-get($colors, white ), .75);
+$color-white-54: rgba(map-get($colors, white ), .54);
+$color-white-38: rgba(map-get($colors, white ), .38);
+$color-white-12: rgba(map-get($colors, white ), .12);
+
+$color-primary: map-get($colors, primary);
+$color-secondary: map-get($colors, secondary);
+$color-ascent: map-get($colors, ascent);
+
+$color-ad: map-get($colors, ad);
+
+$bg-color: map-get($colors, background );
+$bg-twitter: map-get($colors, twitter );
+$bg-quote-of-the-day: map-get($colors, quote-of-the-day );
+
+$divider-color: $color-black-12;

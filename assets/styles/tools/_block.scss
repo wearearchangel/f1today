@@ -1,0 +1,12 @@
+@mixin block($blockBackground: transparent, $blockTitle: $color-ascent, $blockText: $color-black-54, $blockPadding: $base-gap) {
+    background: $blockBackground;
+    color: $blockText;
+    padding: $blockPadding;
+
+    .title {
+        color: $blockTitle;
+    }
+    .text {
+        color: $blockText;
+    }
+}

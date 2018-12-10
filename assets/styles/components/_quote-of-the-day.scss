@@ -1,0 +1,3 @@
+.quote-of-the-day {
+    @include block($bg-quote-of-the-day, $color-white-75, $color-white-54, $base-grid);
+}

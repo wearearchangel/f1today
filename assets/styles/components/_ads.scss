@@ -1,0 +1,46 @@
+.ad {
+    @include block;
+    position: relative;
+
+    .img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        background: $color-ad;
+        border: none;
+    }
+    .title {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        z-index: 1;
+        padding: $base-grid;
+    }
+}
+
+.ad--news-feature,
+.ad--column-feature {
+    height: $ad-space-l;
+}
+
+.ad--gp {
+    width: 100%;
+    padding-top: 100%;
+    height: 0;
+
+    .ad--container {
+        position: absolute;
+        background: $color-ad;
+        width: calc(100% - (#{$base-gap}*2));
+        height: calc(100% - (#{$base-gap}*2));
+        top: $base-gap;
+        left: $base-gap;
+        z-index: 0;
+    }
+}
