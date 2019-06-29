@@ -6,7 +6,6 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
-        background: $color-ad;
         border: none;
     }
     .title {
@@ -21,18 +20,12 @@
         justify-content: center;
         z-index: 1;
         padding: $base-grid;
+      margin: 0;
+
+      font-size: 14px;
+      font-weight: 500;
+      color: $color-black-38;
     }
-}
-
-.ad--news-feature,
-.ad--column-feature {
-    height: $ad-space-l;
-}
-
-.ad--gp {
-    width: 100%;
-    padding-top: 100%;
-    height: 0;
 
     .ad--container {
         position: absolute;
@@ -43,4 +36,16 @@
         left: $base-gap;
         z-index: 0;
     }
+}
+
+.ad--news-feature,
+.ad--column-feature,
+.ad--standings {
+  height: $ad-space-l;
+}
+
+.ad--gp {
+  width: 100%;
+  padding-top: 100%;
+  height: 0;
 }

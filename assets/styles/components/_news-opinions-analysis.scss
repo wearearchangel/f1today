@@ -1,3 +1,31 @@
 .news-opinions-analysis {
     @include block;
+
+  .articles {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: $base-gap;
+    grid-row-gap: $base-grid;
+  }
+
+  .article {
+    .article__img {
+      @include make-aspect-image(4, 3);
+    }
+
+    .title {
+      @extend %text-title;
+      margin-top: $base-gap;
+    }
+
+    .meta {
+      @extend %text-meta;
+    }
+
+    &:hover {
+      .title {
+        color: $color-primary;
+      }
+    }
+  }
 }

@@ -1,3 +1,14 @@
 .photo-of-the-week {
     @include block;
+
+  .carousel__articles {
+    padding-top: 55%;
+  }
+
+  &.carousel {
+    > .title {
+      @extend %title-background;
+      margin: $base-grid;
+    }
+  }
 }

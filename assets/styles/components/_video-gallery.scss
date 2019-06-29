@@ -1,3 +1,43 @@
 .video-gallery {
-    @include block;
+    @include block($color-ascent, $color-white, null, $base-grid);
+
+    .articles {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-column-gap: $base-gap;
+        grid-row-gap: $base-grid;
+    }
+
+    .article {
+        .article__img {
+            @include make-aspect-image(4, 3);
+            border: 2px solid $color-white-12;
+            position: relative;
+
+            .cta {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                z-index: 10;
+                padding: $base-gap;
+            }
+        }
+
+        .title {
+            @extend %text-title;
+            margin-top: $base-gap;
+            color: $color-white-75;
+        }
+
+        .meta {
+            @extend %text-meta;
+            color: $color-white-54;
+        }
+
+        &:hover {
+            .title {
+                color: $color-primary;
+            }
+        }
+    }
 }

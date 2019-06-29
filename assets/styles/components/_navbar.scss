@@ -1,0 +1,24 @@
+.navbar {
+  .nav--items {
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .nav--item {
+    border-bottom: 3px solid transparent;
+    color: $color-black-38;
+    padding: #{$base-grid/2} 0;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+
+    &.selected {
+      color: $color-primary;
+      border-bottom-color: $color-black;
+    }
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+}

@@ -1,3 +1,17 @@
 .quote-of-the-day {
-    @include block($bg-quote-of-the-day, $color-white-75, $color-white-54, $base-grid);
+  @include block($bg-quote-of-the-day, $color-white, $color-white-54, #{$base-grid-sm*2});
+
+  .title {
+    font-weight: 500;
+  }
+
+  .text {
+    font-weight: 400;
+    letter-spacing: .24px;
+    line-height: 1.5;
+  }
+
+  .meta {
+    color: $color-white-75;
+  }
 }

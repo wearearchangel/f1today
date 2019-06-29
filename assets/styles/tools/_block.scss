@@ -5,6 +5,10 @@
 
     .title {
         color: $blockTitle;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: .12px;
+      margin-bottom: $base-grid-sm;
     }
     .text {
         color: $blockText;

@@ -1,140 +1,174 @@
 .container {
-    padding: $base-grid;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: $base-grid;
+
+  .header {
+    grid-area: header;
 
     display: grid;
     grid-template-columns: 1fr 9fr;
-    grid-template-areas: 
-        "logo navbar"
-        "logo account"
-        "flags flags"
-        "content content"
-        "footer footer"
-        ;
+    grid-template-areas: "logo navbar" "logo account" "flags flags";
+    grid-column-gap: #{$base-grid*2};
+  }
 
-    .logo {
-        grid-area: logo;
-    }
-    .navbar {
-        grid-area: navbar;
-        border-bottom: 1px solid $color-ascent;
-    }
-    .account {
-        grid-area: account;
-    }
-    .flags {
-        grid-area: flags;
-    }
-    .content {
-        grid-area: content;
+  .logo {
+    grid-area: logo;
+  }
 
+  .navbar {
+    grid-area: navbar;
+    border-bottom: 1px solid $color-ascent;
+
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .account {
+    grid-area: account;
+
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .flags {
+    grid-area: flags;
+  }
+
+  .content {
+    grid-area: content;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto;
+    grid-template-areas: "stories stories" "content-left content-right";
+
+    border-width: 3px 1px 0 1px;
+    border-style: solid;
+    border-color: $color-ascent $divider-color transparent $divider-color;
+
+    .stories {
+      grid-area: stories;
+
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      border-bottom: 1px solid $divider-color;
+
+      .stories--top {
+        border-left: 1px solid $divider-color;
+      }
+    }
+
+    .content--left {
+      grid-area: content-left;
+
+      display: flex;
+      flex-flow: column nowrap;
+
+      > * {
+        display: block;
+
+        &:not(:last-child) {
+          border-bottom: 1px solid $divider-color;
+        }
+
+        &:last-child {
+          flex: 1;
+        }
+      }
+    }
+
+    .content--right {
+      grid-area: content-right;
+
+      display: grid;
+      grid-template-rows: auto auto 1fr;
+      border-left: 1px solid $divider-color;
+
+      > * {
+        &:not(:last-child) {
+          border-bottom: 1px solid $divider-color;
+        }
+      }
+
+      .standings, .gp {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: auto auto;
-        grid-template-areas:
-            "stories stories"
-            "content-left content-right";
+      }
 
-        border-width: 3px 1px 0 1px;
-        border-style: solid;
-        border-color: $color-ascent $divider-color transparent $divider-color;
+      .standings {
+        .standings--team {
+          border-left: 1px solid $divider-color;
+        }
+      }
 
-        .stories {
-            grid-area: stories;
-
-            display: grid;
-            grid-template-columns: 2fr 1fr;
+      .gp--left, .gp--right {
+        > * {
+          &:not(:last-child) {
             border-bottom: 1px solid $divider-color;
-
-            .stories--top {
-                border-left: 1px solid $divider-color;
-            }
+          }
         }
+      }
 
-        .content--left {
-            grid-area: content-left;
+      .gp--right {
+        display: flex;
+        flex-flow: column nowrap;
 
-            > * {
-                display: block;
+        border-left: 1px solid $divider-color;
 
-                &:not(:last-child) {
-                    border-bottom: 1px solid $divider-color;
-                }
-            }
+        :last-child {
+          flex: 1;
         }
-        .content--right {
-            grid-area: content-right;
-
-            display: grid;
-            grid-template-rows: auto $ad-space-d 1fr;
-            border-left: 1px solid $divider-color;
-
-            > * {
-                &:not(:last-child) {
-                    border-bottom: 1px solid $divider-color;
-                }
-            }
-
-            .standings, .gp {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .standings {
-                .standings--team {
-                    border-left: 1px solid $divider-color;
-                }
-            }
-            .gp--left, .gp--right {
-                > * {
-                    &:not(:last-child) {
-                        border-bottom: 1px solid $divider-color;
-                    }
-                }
-            }
-            .gp--right {
-                border-left: 1px solid $divider-color;
-            }
-        }
+      }
     }
-    .footer {
-        grid-area: footer;
+  }
 
-        display: grid;
-        grid-template-rows: 8px auto;
-        grid-template-columns: 2fr 4fr 1fr 2fr;
-        grid-template-areas:
-            "color-scheme color-scheme color-scheme color-scheme"
-            "logo formula-1 series social";
+  .footer {
+    grid-area: footer;
 
-        .color-scheme {
-            grid-area: color-scheme;
-            
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            
-            .color-ascent {
-                background: $color-ascent;
-            }
-            .color-primary {
-                background: $color-primary;
-            }
-            .color-secondary {
-                background: $color-secondary;
-            }
-        }
+    display: grid;
+    grid-template-rows: 8px auto;
+    grid-template-columns: 2fr 4fr 2fr 3fr;
+    grid-template-areas: "color-scheme color-scheme color-scheme color-scheme" "logo formula-1 series social";
+    grid-row-gap: #{$base-grid*3};
+    margin-bottom: #{$base-grid*5};
 
-        .logo {
-            grid-area: logo;
-        }
-        .formula-1 {
-            grid-area: formula-1;
-        }
-        .series {
-            grid-area: series;
-            border-left: 1px solid $divider-color;
-        }
-        .social {
-            grid-area: social;
-            border-left: 1px solid $divider-color;
-        }
+    .color-scheme {
+      grid-area: color-scheme;
+
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+
+      .color-ascent {
+        background: $color-ascent;
+      }
+
+      .color-primary {
+        background: $color-primary;
+      }
+
+      .color-secondary {
+        background: $color-secondary;
+      }
     }
+
+    .logo {
+      grid-area: logo;
+    }
+
+    .formula-1 {
+      grid-area: formula-1;
+    }
+
+    .series {
+      grid-area: series;
+      border-left: 1px solid $divider-color;
+    }
+
+    .social {
+      grid-area: social;
+      border-left: 1px solid $divider-color;
+    }
+  }
 }

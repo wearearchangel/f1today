@@ -1,0 +1,97 @@
+.carousel {
+  position: relative;
+
+  > .title {
+    margin: $base-grid;
+    position: absolute;
+    z-index: 50;
+    top: 0;
+    left: 0;
+  }
+}
+
+.carousel__btns {
+  .btn {
+    color: $color-black-38;
+    font-size: $base-grid;
+    text-align: center;
+    width: #{$base-grid*2};
+    height: #{$base-grid*4};
+    padding: #{$base-grid-sm*2} 0;
+    line-height: $base-grid;
+    background: white;
+    border: 1px solid $divider-color;
+
+    position: absolute;
+    z-index: 1000;
+    top: calc(50% - #{$base-grid*2});
+
+    cursor: pointer;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+
+  .btn--next {
+    right: 0;
+    border-radius: #{$base-grid*4} 0 0 #{$base-grid*4};
+    border-right: none;
+    box-shadow: -5px 0 $divider-color;
+  }
+
+  .btn--prev {
+    left: 0;
+    border-radius: 0 #{$base-grid*4} #{$base-grid*4} 0;
+    border-left: none;
+    box-shadow: 5px 0 $divider-color;
+  }
+}
+
+.carousel__articles {
+  position: relative;
+  background: $bg-color;
+  width: 100%;
+  height: 0;
+  padding-top: 50%;
+  top: 0;
+
+  .article {
+    @extend %article-with-caption;
+
+    .caption {
+      //padding: $base-grid #{$base-grid*2};
+
+      .title {
+        color: $color-white;
+        font-size: 29px;
+        font-weight: 700;
+        padding: 0;
+      }
+
+      .sub-title {
+        @extend %text-title-lg;
+        color: $color-white;
+        font-weight: 400;
+        padding: 0;
+      }
+
+      .text {
+        margin-top: $base-gap;
+      }
+
+      .cta {
+        padding: 0;
+        margin-top: $base-gap;
+        color: $color-white-54;
+        font-size: 14px;
+        font-weight: 400;
+        letter-spacing: 1px;
+
+        &:hover {
+          color: $color-primary;
+        }
+      }
+    }
+  }
+}

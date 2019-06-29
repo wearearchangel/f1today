@@ -1,5 +1,18 @@
 .footer {
-    .formula-1, .series, .social {
-        @include block;
+  .formula-1, .series, .social {
+    @include block(transparent, $color-ascent, $color-white-54);
+    padding: 0 $base-grid;
+
+    .nav--item {
+      font-weight: 500;
     }
+  }
+
+  .formula-1 {
+    .nav--items {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-column-gap: $base-grid;
+    }
+  }
 }

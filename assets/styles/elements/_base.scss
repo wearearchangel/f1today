@@ -1,3 +1,24 @@
 * {
     box-sizing: border-box;
 }
+
+body {
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  font-weight: $base-font-weight;
+  line-height: $base-line-height;
+  color: $color-black-54;
+}
+
+p {
+  margin-bottom: $base-gap;
+}
+
+a {
+  color: $color-black-54;
+  text-decoration: none;
+
+  &:hover {
+    color: $color-primary;
+  }
+}

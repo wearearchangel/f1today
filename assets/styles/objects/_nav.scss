@@ -1,0 +1,29 @@
+.nav--items {
+  display: flex;
+}
+
+.nav--item {
+  display: block;
+  line-height: $base-grid;
+  padding: 0;
+  margin: 0;
+  white-space: nowrap;
+
+  cursor: pointer;
+
+  &.selected {
+    color: $color-primary;
+  }
+}
+
+.nav__list {
+  //flex-flow: column nowrap;
+
+  //.nav--item {
+  //  padding: 2px 0;
+  //}
+}
+
+.nav__inline-list {
+  flex-flow: row nowrap;
+}

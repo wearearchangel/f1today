@@ -1,3 +1,94 @@
 .standings--wc, .standings--team {
-    @include block;
+  @include block;
+  counter: standings;
+}
+
+.standings__list {
+  display: grid;
+  padding: 0 $base-gap;
+
+  .standing {
+    display: grid;
+    grid-template-rows: $base-grid;
+    grid-auto-rows: $base-grid;
+    padding: $base-gap 0 $base-gap #{$base-grid-sm*2};
+    align-items: center;
+    position: relative;
+    counter-increment: standing;
+
+    &:before {
+      @extend %text-title;
+      content: counter(standing);
+      color: $color-black-38;
+
+      position: absolute;
+      left: 0;
+      top: 0;
+
+      line-height: $base-grid;
+    }
+
+    &:not(:last-child) {
+      border-bottom: 1px solid $bg-color;
+    }
+
+    .img {
+      grid-column: 1/2;
+      object-fit: contain;
+      object-position: top center;
+    }
+
+    .title {
+      @extend %text-title;
+      line-height: $base-grid;
+    }
+
+    .meta {
+      @extend %text-meta;
+      line-height: $base-grid;
+      padding: 0;
+    }
+
+    .meta--vehicle {
+    }
+
+    .meta--points {
+      grid-column: 3/4;
+      color: $color-black-54;
+      padding: 0;
+    }
+  }
+}
+
+.standings--wc {
+  .standing {
+    grid-template-columns: 48px 1fr auto;
+    grid-column-gap: $base-grid-sm;
+
+    .img {
+      grid-row: span 2;
+    }
+
+    &:before {
+      padding: $base-grid 0;
+    }
+
+    .meta--points {
+      grid-row: span 2;
+    }
+
+    &:not(:last-child) {
+    }
+  }
+}
+
+.standings--team {
+  .standing {
+    grid-template-columns: 20px 1fr auto;
+    grid-column-gap: $base-grid;
+
+    &:before {
+      padding: $base-gap 0;
+    }
+  }
 }

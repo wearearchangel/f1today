@@ -1,3 +1,47 @@
 .twitter-feed {
     @include block($bg-twitter, $color-ascent, $color-white-54, $base-grid);
+
+  .tweets {
+    display: grid;
+    //grid-template-rows: auto;
+    grid-row-gap: $base-grid;
+  }
+
+  .tweet {
+    display: grid;
+    grid-template-areas: "twFullname twTimestamp" "twUsername twTimestamp" "twText twText" "twMeta twMeta";
+    grid-template-columns: 1fr auto;
+
+    @extend %text-meta;
+    padding: 0;
+
+    .full-name {
+      grid-area: twFullname;
+      @extend %text-title;
+      color: $color-ascent;
+    }
+
+    .username {
+      grid-area: twUsername;
+    }
+
+    .timestamp {
+      grid-area: twTimestamp;
+      font-weight: 400;
+    }
+
+    .text {
+      grid-area: twText;
+      color: $color-white-75;
+      //font-size: 13px;
+      font-weight: 400;
+      letter-spacing: .24px;
+      padding: $base-gap 0;
+      margin: 0;
+    }
+
+    .meta {
+      grid-area: twMeta;
+    }
+  }
 }

@@ -1,3 +1,30 @@
 .gp__reports {
     @include block;
+
+  .articles {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: $base-grid;
+  }
+
+  .article {
+    .article__img {
+      @include make-aspect-image(16, 9);
+    }
+
+    .title {
+      @extend %text-title;
+      margin-top: $base-gap;
+    }
+
+    .meta {
+      @extend %text-meta;
+    }
+
+    &:hover {
+      .title {
+        color: $color-primary;
+      }
+    }
+  }
 }

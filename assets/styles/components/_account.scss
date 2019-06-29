@@ -1,0 +1,31 @@
+.account {
+  .nav--items {
+    position: relative;
+  }
+
+  .nav--item {
+    padding: $base-grid-sm 0;
+    font-weight: 600;
+
+    &:not(:first-child) {
+      &:before {
+        content: "";
+        display: inline-block;
+        float: left;
+        width: 1px;
+        height: 12px;
+        background: currentColor;
+        position: relative;
+        top: 6px;
+        margin: 0 $base-grid;
+      }
+    }
+
+    &.selected {
+    }
+
+    &:not(.selected) {
+      color: $color-black-38;
+    }
+  }
+}
